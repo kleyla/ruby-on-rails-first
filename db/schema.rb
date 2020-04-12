@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_12_003808) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "images", force: :cascade do |t|
     t.string "description"
     t.integer "likes_counter"
