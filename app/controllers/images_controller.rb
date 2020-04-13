@@ -5,6 +5,7 @@ class ImagesController < ApplicationController
     end
 
     def new
+        @image = Image.new
     end
 
     def create
@@ -13,8 +14,19 @@ class ImagesController < ApplicationController
         @image.save
         redirect_to @image
     end
+    
     def show
         @image = Image.find params[:id]
+    end
+    
+    def edit
+        @image = Image.find params[:id]
+    end
+    
+    def update
+        @image = Image.find params[:id]
+        @image.update image_params
+        redirect_to @image
     end
 
     private
